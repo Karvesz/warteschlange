@@ -1,22 +1,20 @@
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Start {
 
-    public static Liste L1;
 
     public static void main (String[] args) {
 
+        testHinteneinfuegen();
 
-        Liste L1 = new Liste();
-        insert();
 
 
     }
 
     public static void insert () {
+
+        Liste L1 = new Liste();
+
 
         System.out.println("Hallo :)");
         System.out.println("Watchu wanna do?");
@@ -44,7 +42,7 @@ public class Start {
             //insert data
             Datenelement d1 = new Datenelement(name, age);
             Knoten k1 = new Knoten(d1);
-            L1.einfuegen(k1);
+            L1.prepend(k1);
 
             System.out.println("Successfully added <3");
 
@@ -52,6 +50,7 @@ public class Start {
 
             //change age
             if(i == 1) {
+
 
             }
 
@@ -78,6 +77,33 @@ public class Start {
 
     }
 
+    public static void testHinteneinfuegen() {
+
+        Liste l1 = new Liste();
+        for (int i = 0; i < 10; i++) {
+            Datenelement d1 = new Datenelement("Peter", i);
+            Knoten k1 = new Knoten(d1);
+            l1.append(k1);
+        }
+
+        l1.printInfo();
+
+
+    }
+
+    public static void testVorneeinfuegen() {
+
+        Liste l1 = new Liste();
+        for (int i = 0; i < 10; i++) {
+            Datenelement d1 = new Datenelement("Peter", i);
+            Knoten k1 = new Knoten(d1);
+            l1.prepend(k1);
+        }
+
+        l1.printInfo();
+
+
+    }
 
 
 }

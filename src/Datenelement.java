@@ -2,11 +2,7 @@ public class Datenelement
 {
     private String name;
     private int Alter;
-    // weiter Attribute weggelassen
 
-    /**
-     * Constructor for objects of class Patient
-     */
     public Datenelement(String n, int a)
     {
         name=n;

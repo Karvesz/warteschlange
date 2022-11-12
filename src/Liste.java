@@ -1,72 +1,94 @@
 
-public class Liste
-{
+public class Liste {
     private Knoten anfang;
 
-    public Liste()
-    {
+    public Liste() {
         anfang = null;
 
     }
-    void laengeGeben(){
+
+    void standardListFunction(){
+        if(anfang==null){
+            // was machst du wenn die Liste leer ist
+        }
+        else {
+            anfang.standardKnotenFunction();
+        }
+    }
+
+    void laengeGeben() {
         int laenge = 0;
-        if(anfang != null)
-        {
+        if (anfang != null) {
             laenge = anfang.restlaengegeben();
             System.out.println("Länge:" + laenge);
         }
-        else{
+        else {
             System.out.println("Liste Leer");
 
         }
     }
 
-    void einfuegen(Knoten k){
-        if(anfang == null)  {
-            anfang = k;
-
-        }
-        else{
+    void prepend(Knoten k) {
+        if (anfang != null) {
             k.setNachfolger(anfang);
-            anfang = k;
-
         }
+        anfang = k;
     }
-    void entfernen(){
-        if(anfang == null){
+
+    void removeFirstElement() {
+        if (anfang == null) {
             System.out.println("Liste leer");
         }
-        else{
+        else {
             anfang = anfang.getNachfolger();
         }
     }
-    void SummeAlter(){
-        int a;
-        if(anfang!= null){
-            a= anfang.getAlterNachMir();
-            System.out.println("Alter:" +a);
+
+    void removeElementAtIndex(int index) {
+
+        if (anfang==null) {
+            System.out.println("Index nicht vorhanden");
         }
-        else{
+        else {
+            anfang.removeElementAtIndex(index, 0);
+        }
+
+    }
+
+    void SummeAlter() {
+        int a;
+        if (anfang != null) {
+            a = anfang.getAlterNachMir();
+            System.out.println("Alter:" + a);
+        }
+        else {
             System.out.println("0");
         }
 
     }
-    void hinteneinfuegen(Knoten k){
-        Knoten a = anfang;
 
-        if(a == null){
+    void append(Knoten k) {
+
+
+        if (anfang == null) {
+            // Liste ist leer, einfach als erstes Element einfügen
             anfang = k;
         }
+        else {
+            anfang.hinteneinfuegen(k);
 
-        else{
-            if(a.getNachfolger() == null){
-                a.setNachfolger(k);
-            }
-            else{
-                a = a.getNachfolger();
-                hinteneinfuegen(k);
-            }
         }
+    }
+
+    void printInfo() {
+
+        if(anfang == null) {
+            System.out.println("Liste leer");
+        }
+        else {
+            anfang.printInfo();
+        }
+
     }
 }
 
