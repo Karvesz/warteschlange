@@ -5,7 +5,7 @@ public class Start {
 
     public static void main (String[] args) {
 
-        testHinteneinfuegen();
+        testRemoveAtEnd();
 
 
 
@@ -13,7 +13,7 @@ public class Start {
 
     public static void insert () {
 
-        Liste L1 = new Liste();
+        List L1 = new List();
 
 
         System.out.println("Hallo :)");
@@ -61,7 +61,7 @@ public class Start {
 
             //see info
             if(i == 1) {
-                L1.SummeAlter();
+                L1.printTotalAge();
 
             }
 
@@ -77,9 +77,33 @@ public class Start {
 
     }
 
+    public static void testRemoveAtEnd() {
+        List l1 = new List();
+        for (int i = 0; i < 10; i++) {
+            Datenelement d1 = new Datenelement("Peter", i);
+            Knoten k1 = new Knoten(d1);
+            l1.append(k1);
+        }
+
+        l1.removeLastElement();
+        l1.printInfo();
+
+    }
+
+    public static void testRemoveAtIndex() {
+        List l1 = new List();
+        for (int i = 0; i < 10; i++) {
+            Datenelement d1 = new Datenelement("Peter", i);
+            Knoten k1 = new Knoten(d1);
+            l1.append(k1);
+        }
+        l1.removeElementAtIndex(0);
+        l1.printInfo();
+    }
+
     public static void testHinteneinfuegen() {
 
-        Liste l1 = new Liste();
+        List l1 = new List();
         for (int i = 0; i < 10; i++) {
             Datenelement d1 = new Datenelement("Peter", i);
             Knoten k1 = new Knoten(d1);
@@ -93,7 +117,7 @@ public class Start {
 
     public static void testVorneeinfuegen() {
 
-        Liste l1 = new Liste();
+        List l1 = new List();
         for (int i = 0; i < 10; i++) {
             Datenelement d1 = new Datenelement("Peter", i);
             Knoten k1 = new Knoten(d1);
