@@ -4,7 +4,7 @@ public class Start {
 
     public static void main(String[] args) {
 
-        testInsertAtIndex(3, "Jana", 23);
+        insert();
     }
 
     public static void insert() {
@@ -19,7 +19,15 @@ public class Start {
         System.out.println("Press 4 if u're fine and wanna get sum info");
 
         Scanner sc1 = new Scanner(System.in);
-        int i = sc1.nextInt();
+
+        int i = 0;
+        try {
+             i = sc1.nextInt();
+        }
+        catch (Exception e){
+            System.out.println("\n !!!Try again!!! \n");
+            insert();
+        }
 
         //new element
         if (i == 1) {
