@@ -3,69 +3,12 @@ public class Knoten {
     private Knoten nextElement;
     private Datenelement person;
 
-
     public Knoten(Datenelement person) {
         nextElement = null;
         this.person = person;
     }
 
-    public Knoten getNextElement() {
-        return nextElement;
-    }
-
-    public void setNextElement(Knoten k) {
-        nextElement = k;
-    }
-
-    public void hinteneinfuegen(Knoten k) {
-
-        if (nextElement != null) {
-            nextElement.hinteneinfuegen(k);
-        }
-        else {
-            setNextElement(k);
-        }
-
-    }
-
-    public Datenelement getDatenelement() {
-        return person;
-    }
-
-    public int getAge() {
-        return person.getAge();
-
-    }
-
-    public int getAgeOfNextElement() {
-
-        if (nextElement != null) {
-            return (nextElement.getAgeOfNextElement() + person.getAge());
-
-        }
-        else {
-            return person.getAge();
-
-        }
-    }
-
-    int getRemainingLengthOfList() {
-        if (nextElement != null) {
-            return (nextElement.getRemainingLengthOfList() + 1);
-        }
-        else {
-            return 1;
-        }
-    }
-
-    public void printInfo() {
-        System.out.println("Hallo ich bin " + person.getName());
-        System.out.println("Ich bin " + person.getAge() + "\n");
-        if (nextElement != null) {
-            nextElement.printInfo();
-        }
-    }
-
+    /*
     public void standardKnotenFunction() {
         // wenn jedes Element das machen soll: aufgabe der funktion ausführen
 
@@ -77,6 +20,17 @@ public class Knoten {
         else {
             // wenn return dann auch da return
             nextElement.standardKnotenFunction();
+        }
+    }
+    */
+
+    public void append(Knoten k) {
+
+        if (nextElement != null) {
+            nextElement.append(k);
+        }
+        else {
+            setNextElement(k);
         }
     }
 
@@ -101,8 +55,63 @@ public class Knoten {
             nextElement = nextElement.removeLastElement();
             return this;
         }
+    }
 
+    int getRemainingLengthOfList() {
+        if (nextElement != null) {
+            return (nextElement.getRemainingLengthOfList() + 1);
+        }
+        else {
+            return 1;
+        }
+    }
+
+    public void printInfo() {
+        person.printNameAndAge();
+        if (nextElement != null) {
+            nextElement.printInfo();
+        }
+    }
+
+    public int getAge() {
+        return person.getAge();
+    }
+
+    public int getAgeOfNextElement() {
+
+        if (nextElement != null) {
+            return (nextElement.getAgeOfNextElement() + person.getAge());
+        }
+        else {
+            return person.getAge();
+        }
+    }
+
+    public Knoten getNextElement() {
+        return nextElement;
+    }
+
+    public void setNextElement(Knoten k) {
+        nextElement = k;
+    }
+
+    public Datenelement getPerson() {
+        return person;
+    }
+
+    public Knoten insertElementAtIndex(int index, int currentIndex, Knoten newKnoten) {
+        if (currentIndex == index) {
+            newKnoten.setNextElement(this);
+            return newKnoten;
+        }
+        else {
+            if (nextElement == null) {
+                System.out.println("Index zuuu hoch");
+            }
+            else {
+                nextElement = nextElement.insertElementAtIndex(index, currentIndex + 1, newKnoten);
+            }
+            return this;
+        }
     }
 }
-
-

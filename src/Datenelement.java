@@ -5,7 +5,6 @@ public class Datenelement {
     public Datenelement(String n, int a) {
         name = n;
         age = a;
-
     }
 
     public String getName() {
@@ -22,12 +21,10 @@ public class Datenelement {
 
     public int getAge() {
         return age;
-
     }
 
     public void printNameAndAge() {
         System.out.println("Name: " + name);
         System.out.println("Alter:" + age);
-
     }
 }
