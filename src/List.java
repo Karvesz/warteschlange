@@ -5,6 +5,9 @@ public class List {
         startElement = null;
     }
 
+    //ToDo Remove Element from name!!!
+    //Rekursiv wie in removeElementAtIndex nur mit name
+
    /*
    void standardListFunction() {
         if (startElement == null) {
@@ -34,6 +37,7 @@ public class List {
             }
         }
     }
+
 
     void insertElementAtIndex(int index, Knoten knoten) {
         if (isStartElementPrintIfEmpty()) {

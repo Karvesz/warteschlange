@@ -77,6 +77,8 @@ public class Knoten {
         return person.getAge();
     }
 
+    public String getName() { return person.getName(); }
+
     public int getAgeOfNextElement() {
 
         if (nextElement != null) {
@@ -114,4 +116,6 @@ public class Knoten {
             return this;
         }
     }
+
+
 }

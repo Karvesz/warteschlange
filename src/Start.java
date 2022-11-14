@@ -22,9 +22,8 @@ public class Start {
 
         int i = 0;
         try {
-             i = sc1.nextInt();
-        }
-        catch (Exception e){
+            i = sc1.nextInt();
+        } catch (Exception e) {
             System.out.println("\n !!!Try again!!! \n");
             insert();
         }
